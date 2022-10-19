@@ -1,0 +1,120 @@
+.header_menu {
+    height: 30px;
+    width: 12.5%;
+    font-weight: bolder;
+    font-size: 16px;
+    color: black;
+    border-radius: 0;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu_down_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 12.5%;
+    font-weight: bolder;
+    font-size: 16px;
+    color: black;
+    border-radius: 0;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu_down_none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 12.5%;
+    font-weight: bolder;
+    font-size: 16px;
+    color: black;
+    border-radius: 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu_row {
+    display: flex;
+    width: 100%;
+    padding: 10px 0px 10px 0px
+}
+
+.footer_font1 {
+    color: white;
+    font-size: 18px;
+}
+
+.footer_font2 {
+    color: white;
+    font-size: 16px;
+    margin: 0px 0px 3px 0px;
+}
+
+.footer_font3 {
+    color: #32C0EB;
+    font-size: 28px;
+    font-weight: bolder;
+    margin: 0px 0px 6px 20px;
+}
+
+.hello_page_left_top_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFE9B7;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.hello_page_left_down_menu {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 0px 0px 0px 20px;
+    border-bottom: 2px solid black;
+}
+
+.hello_page_main_header_text {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.hello_page_main_header_path_text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 15%;
+    height: 60px;
+}
+
+.hello_page_main_text1 {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.hello_page_main_text2 {
+    font-size: 16px;
+    padding: 5px 0px 0px 0px;
+}
+
+.hello_page_main_text3 {
+    font-size: 24px;
+    font-weight: bolder;
+    padding: 0px 0px 0px 20px;
+}
