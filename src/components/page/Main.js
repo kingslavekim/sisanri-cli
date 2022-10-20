@@ -23,8 +23,13 @@ import test7 from "../../image/test/test7.png";
 import test8 from "../../image/test/test8.png";
 import test9 from "../../image/test/test9.png";
 import test10 from "../../image/test/test10.png";
+import {Link} from "react-router-dom";
 
 function Main() {
+    function goUrl(url: string) {
+        window.location.href = url;
+    }
+    
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', margin: '0px 0px 30px 0px' }}>
@@ -35,9 +40,13 @@ function Main() {
                 <Box style={{ width: '20%', border: '2px solid #ACACAC' }}>
                     <img style={{width: '100%'}} src={image1}  alt="image1"/>
                 </Box>
+
                 <Box style={{ width: '20%', border: '2px solid #ACACAC' }}>
-                    <img style={{width: '100%', cursor: 'pointer'}} src={image2}  alt="image2"/>
+                    <Link to="/오시는 길">
+                        <img style={{width: '100%', cursor: 'pointer'}} src={image2} alt="image2"/>
+                    </Link>
                 </Box>
+
                 <Box style={{ width: '50%', border: '2px solid #ACACAC' }}>
                     <Box style={{ display:'flex', alignItems: 'center', height: '15%', borderBottom: '2px solid #ACACAC' }}>
                         <Box style={{ width: '80%' }}>
@@ -84,7 +93,7 @@ function Main() {
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '60%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '70%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>
                 <Box style={{ fontSize: '24px', fontWeight: 'bolder', margin: '0px 0px 10px 0px' }}>
                     시산리아리랑 돌봄공동체 갤러리
                 </Box>
@@ -93,29 +102,29 @@ function Main() {
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '60%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '70%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>
                 <img style={{cursor: 'pointer'}} src={space_left_arrow}  alt="space_left_arrow"/>
-                <img style={{cursor: 'pointer'}} src={test1}  alt="test1"/>
-                <img style={{cursor: 'pointer'}} src={test2}  alt="test2"/>
-                <img style={{cursor: 'pointer'}} src={test3}  alt="test3"/>
-                <img style={{cursor: 'pointer'}} src={test4}  alt="test4"/>
+                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test1}  alt="test1"/>
+                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test2}  alt="test2"/>
+                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test3}  alt="test3"/>
+                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test4}  alt="test4"/>
                 <img style={{cursor: 'pointer'}} src={space_right_arrow}  alt="space_right_arrow"/>
             </Box>
 
-            <Box style={{ display: 'flex', width: '60%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '70%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>
                 <Box style={{ fontSize: '24px', fontWeight: 'bolder', margin: '0px 0px 10px 0px' }}>
                     아름다운 동행
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '60%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '70%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>
                 <img style={{cursor: 'pointer'}} src={left_arrow}  alt="left_arrow"/>
-                <img style={{cursor: 'pointer'}} src={test5}  alt="test5"/>
-                <img style={{cursor: 'pointer'}} src={test6}  alt="test6"/>
-                <img style={{cursor: 'pointer'}} src={test7}  alt="test7"/>
-                <img style={{cursor: 'pointer'}} src={test8}  alt="test8"/>
-                <img style={{cursor: 'pointer'}} src={test9}  alt="test9"/>
-                <img style={{cursor: 'pointer'}} src={test10}  alt="test10"/>
+                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test5}  alt="test5"/>
+                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test6}  alt="test6"/>
+                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test7}  alt="test7"/>
+                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test8}  alt="test8"/>
+                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test9}  alt="test9"/>
+                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test10}  alt="test10"/>
                 <img style={{cursor: 'pointer'}} src={right_arrow}  alt="right_arrow"/>
             </Box>
         </Box>
