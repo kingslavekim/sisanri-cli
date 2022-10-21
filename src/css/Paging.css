@@ -1,3 +1,58 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul.pagination li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+ul.pagination li:first-child{
+    border-radius: 5px 0 0 5px;
+}
+
+ul.pagination li:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+ul.pagination li a {
+    text-decoration: none;
+    color: #337ab7;
+    font-size: 1rem;
+}
+
+ul.pagination li.active a {
+    color: white;
+}
+
+ul.pagination li.active {
+    background-color: #337ab7;
+}
+
+ul.pagination li a:hover,
+ul.pagination li a.active {
+    color: blue;
+}
+
+.page-selection {
+    width: 48px;
+    height: 30px;
+    color: #337ab7;
+}
+
 .header_menu {
     height: 30px;
     width: 12.5%;
@@ -170,3 +225,75 @@
     flex-direction: row;
     margin: 30px 0px 0px 0px;
 }
+
+.volunteer_page_main_row1 {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 0px 0px 0px 10px;
+}
+
+.volunteer_page_main_row2 {
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    margin: 15px 0px 0px 0px;
+    padding: 5px 0px 5px 10px;
+    background: #D9D9D9;
+    font-size: 14px;
+}
+
+.volunteer_page_main_row3 {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px 0px 0px;
+}
+
+.place_page_main_row1 {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px 0px 0px;
+}
+
+.place_page_main_row2 {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 0px 0px 0px 10px;
+}
+
+.place_page_main_row3 {
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    margin: 10px 0px 0px 0px;
+    padding: 5px 0px 5px 10px;
+    background: #D9D9D9;
+    font-size: 14px;
+}
+
+.place_page_main_row4 {
+    padding: 10px 0px 0px 0px;
+}
+
+.place_page_main_row5 {
+    width: 600px;
+    padding: 0px 0px 0px 30px;
+}
+
+.place_page_main_row6 {
+    height: 400px;
+    padding: 0px 0px 0px 30px;
+}
+
+.place_page_main_row7 {
+    width: 300px;
+    padding: 0px 0px 0px 30px;
+}
+
+.notice_page_main_row1 {
+    font-size: 16px;
+}
+
+.notice_page_main_row2 {
+    color: red;
+    font-size: 16px;
+    padding: 0px 0px 0px 5px;
+}
+

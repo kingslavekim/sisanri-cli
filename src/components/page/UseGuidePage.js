@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import small_banner from "../../image/small_banner.png";
 import home from "../../image/home.png";
 import division from "../../image/division.png";
+import use_guide from "../../image/use_guide.png";
 
 function UseGuidePage(props) {
     useEffect(() => {
@@ -16,6 +17,7 @@ function UseGuidePage(props) {
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', margin: '0px 0px 50px 0px' }}>
                 <img style={{width: '100%'}} src={small_banner}  alt="small_banner"/>
             </Box>
+
             <Box style={{ display: 'flex', width: '80%', justifyContent: 'space-between' }}>
                 <Box style={{ width: '15%' }}>
                     <Box className={"left_top_menu"}>이용안내</Box>
@@ -103,16 +105,7 @@ function UseGuidePage(props) {
 
                         <Box className={"use_guide_page_main_row2"}>
                             <Box>
-                                • 이용 상담
-                            </Box>
-                            <Box>
-                                • 입소 신청서 작성
-                            </Box>
-                            <Box>
-                                • 입소 회의
-                            </Box>
-                            <Box>
-                                • 입소
+                                <img style={{ padding: '10px 0px 10px 0px' }} src={use_guide}  alt="use_guide"/>
                             </Box>
                         </Box>
                         

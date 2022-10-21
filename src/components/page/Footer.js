@@ -18,7 +18,7 @@ function Footer() {
                 </Box>
                 <Box style={{ display: 'flex', alignItems: 'center', width: '25%' }}>
                     <img src={call}  alt="call"/>
-                    <Box className={"footer_font3"}>041-333- 2022</Box>
+                    <Box className={"footer_font3"}>041-333-2022</Box>
                 </Box>
 
             </Box>
