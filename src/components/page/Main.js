@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Box from "@mui/material/Box";
-import {CircularProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 import moment from "moment";
 import '../../css/Paging.css'
 import banner from "../../image/banner.png";
@@ -26,10 +26,6 @@ import test10 from "../../image/test/test10.png";
 import {Link} from "react-router-dom";
 
 function Main() {
-    function goUrl(url: string) {
-        window.location.href = url;
-    }
-    
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', margin: '0px 0px 30px 0px' }}>
@@ -42,7 +38,7 @@ function Main() {
                 </Box>
 
                 <Box style={{ width: '20%', border: '2px solid #ACACAC' }}>
-                    <Link to="/오시는 길">
+                    <Link to="/MapPage">
                         <img style={{width: '100%', cursor: 'pointer'}} src={image2} alt="image2"/>
                     </Link>
                 </Box>

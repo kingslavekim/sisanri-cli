@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect} from 'react';
 import Box from "@mui/material/Box";
 import {Link} from "react-router-dom";
 
@@ -22,10 +22,10 @@ function UseGuidePage(props) {
                 <Box style={{ width: '15%' }}>
                     <Box className={"left_top_menu"}>이용안내</Box>
                     <Box>
-                        <Link className={"left_down_menu"} to="/이용안내">이용안내</Link>
+                        <Link className={"left_down_menu"} to="/UseGuidePage">이용안내</Link>
                     </Box>
                     <Box>
-                        <Link className={"left_down_menu"} to="/이용요금">이용요금</Link>
+                        <Link className={"left_down_menu"} to="/UseFeePage">이용요금</Link>
                     </Box>
                 </Box>
                 <Box style={{ width: '80%'}}>

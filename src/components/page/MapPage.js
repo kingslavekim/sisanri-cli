@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import Box from "@mui/material/Box";
 import {Link} from "react-router-dom";
 
@@ -39,13 +39,13 @@ function MapPage(props) {
                 <Box style={{ width: '15%' }}>
                     <Box className={"left_top_menu"}>센터소개</Box>
                     <Box>
-                        <Link className={"left_down_menu"} to="/인사말">인사말</Link>
+                        <Link className={"left_down_menu"} to="/HelloPage">인사말</Link>
                     </Box>
                     <Box>
-                        <Link className={"left_down_menu"} to="/연혁">연혁</Link>
+                        <Link className={"left_down_menu"} to="/HistoryPage">연혁</Link>
                     </Box>
                     <Box>
-                        <Link className={"left_down_menu"} to="/오시는 길">오시는 길</Link>
+                        <Link className={"left_down_menu"} to="/MapPage">오시는 길</Link>
                     </Box>
                 </Box>
                 <Box style={{ width: '80%'}}>

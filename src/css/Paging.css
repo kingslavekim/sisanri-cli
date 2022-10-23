@@ -297,3 +297,20 @@ ul.pagination li a.active {
     padding: 0px 0px 0px 5px;
 }
 
+.main_link_row {
+    width: 100%;
+    color: black;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.notice_detail_page_main_row1 {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 10px 0px 0px 20px;
+}
+
+.notice_detail_page_main_row2 {
+    font-size: 16px;
+    padding: 10px 0px 10px 20px;
+}

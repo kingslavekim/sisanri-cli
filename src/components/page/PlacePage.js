@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect} from 'react';
 import Box from "@mui/material/Box";
 
 import small_banner from "../../image/small_banner.png";

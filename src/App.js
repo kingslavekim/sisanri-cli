@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Header, Main, Menu, Footer, HelloPage, HistoryPage, MapPage, PlacePage, UseGuidePage, NoticePage, VolunteerPage} from './components';
+import { Header, Main, Menu, Footer, HelloPage, HistoryPage, MapPage, PlacePage, UseGuidePage, NoticePage, NoticeDetailPage, VolunteerPage, SupportPage} from './components';
 
 class App extends Component {
     render() {
@@ -10,13 +10,15 @@ class App extends Component {
                 <Menu />
                 <Routes>
                     <Route path="/" element={<Main/>}/>
-                    <Route path="/인사말" element={<HelloPage/>}/>
-                    <Route path="/연혁" element={<HistoryPage/>}/>
-                    <Route path="/오시는 길" element={<MapPage/>}/>
-                    <Route path="/시설안내" element={<PlacePage/>}/>
-                    <Route path="/이용안내" element={<UseGuidePage/>}/>
-                    <Route path="/공지사항" element={<NoticePage/>}/>
-                    <Route path="/봉사지원" element={<VolunteerPage/>}/>
+                    <Route path="/HelloPage" element={<HelloPage/>}/>
+                    <Route path="/HistoryPage" element={<HistoryPage/>}/>
+                    <Route path="/MapPage" element={<MapPage/>}/>
+                    <Route path="/PlacePage" element={<PlacePage/>}/>
+                    <Route path="/UseGuidePage" element={<UseGuidePage/>}/>
+                    <Route path="/NoticePage" element={<NoticePage/>}/>
+                    <Route path="/NoticeDetailPage" element={<NoticeDetailPage/>}/>
+                    <Route path="/VolunteerPage" element={<VolunteerPage/>}/>
+                    <Route path="/SupportPage" element={<SupportPage/>}/>
                 </Routes>
                 <Footer />
             </div>

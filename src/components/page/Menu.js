@@ -17,19 +17,9 @@ function Menu() {
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', position: 'absolute', background: 'white', borderTop: '2px solid black' }}>
                 <Box style={{ display: 'flex', width: '60%', flexDirection: 'column' }}>
                     <Box className={"menu_row"}>
-                        <Link className={"menu_down_text"} to="/인사말" onClick={(e)=>{closeMenu()}}>인사말</Link>
+                        <Link className={"menu_down_text"} to="/HelloPage" onClick={(e)=>{closeMenu()}}>인사말</Link>
                         <Box className={"menu_down_none"}></Box>
-                        <Link className={"menu_down_text"} to="/이용안내" onClick={(e)=>{closeMenu()}}>이용안내</Link>
-                        <Box className={"menu_down_none"}></Box>
-                        <Box className={"menu_down_none"}></Box>
-                        <Box className={"menu_down_none"}></Box>
-                        <Box className={"menu_down_none"}></Box>
-                        <Box className={"menu_down_none"}></Box>
-                    </Box>
-                    <Box className={"menu_row"}>
-                        <Link className={"menu_down_text"} to="/연혁" onClick={(e)=>{closeMenu()}}>연혁</Link>
-                        <Box className={"menu_down_none"}></Box>
-                        <Link className={"menu_down_text"} to="/이용요금" onClick={(e)=>{closeMenu()}}>이용요금</Link>
+                        <Link className={"menu_down_text"} to="/UseGuidePage" onClick={(e)=>{closeMenu()}}>이용안내</Link>
                         <Box className={"menu_down_none"}></Box>
                         <Box className={"menu_down_none"}></Box>
                         <Box className={"menu_down_none"}></Box>
@@ -37,7 +27,17 @@ function Menu() {
                         <Box className={"menu_down_none"}></Box>
                     </Box>
                     <Box className={"menu_row"}>
-                        <Link className={"menu_down_text"} to="/오시는 길" onClick={(e)=>{closeMenu()}}>오시는 길</Link>
+                        <Link className={"menu_down_text"} to="/HistoryPage" onClick={(e)=>{closeMenu()}}>연혁</Link>
+                        <Box className={"menu_down_none"}></Box>
+                        <Link className={"menu_down_text"} to="/UseFeePage" onClick={(e)=>{closeMenu()}}>이용요금</Link>
+                        <Box className={"menu_down_none"}></Box>
+                        <Box className={"menu_down_none"}></Box>
+                        <Box className={"menu_down_none"}></Box>
+                        <Box className={"menu_down_none"}></Box>
+                        <Box className={"menu_down_none"}></Box>
+                    </Box>
+                    <Box className={"menu_row"}>
+                        <Link className={"menu_down_text"} to="/MapPage" onClick={(e)=>{closeMenu()}}>오시는 길</Link>
                         <Box className={"menu_down_none"}></Box>
                         <Box className={"menu_down_none"}></Box>
                         <Box className={"menu_down_none"}></Box>

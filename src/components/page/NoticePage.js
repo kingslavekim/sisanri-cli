@@ -1,9 +1,10 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from "@mui/material/Box";
-import {CircularProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 import moment from "moment";
 import axios from "axios";
 import Pagination from "react-js-pagination";
+import {Link} from "react-router-dom";
 
 import small_banner from "../../image/small_banner.png";
 import home from "../../image/home.png";
@@ -14,8 +15,6 @@ function NoticePage(props) {
     const [count, setCount] = useState(0);
     const [size, setSize] = useState({start: 0, end: 20});
     const [page, setPage] = useState(1);
-
-    const childRef = useRef();
 
     let addSize = 20;
 
@@ -92,24 +91,22 @@ function NoticePage(props) {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody id={"notice_search_table_body"}>
-                                    {/*<TableRow key={0} id={"notice_search_table_row_0"} style={{cursor: "pointer"}} onMouseOver={ (e) => { onMouseRow(0) }} onMouseOut={ (e) => { onMouseOutRow(0) }}>*/}
-                                    {/*    <TableCell align="center" style={{ padding: '10px 0px 10px 0px' }}>1</TableCell>*/}
-                                    {/*    <TableCell style={{ padding: '10px 0px 10px 0px' }}>공지사항 test</TableCell>*/}
-                                    {/*    <TableCell align="center" style={{ padding: '10px 0px 10px 0px' }}>2022-10-21 00:00:00</TableCell>*/}
-                                    {/*</TableRow>*/}
                                     {
                                         noticeData.data.map((notice, index) => {
                                             return (
                                                 <TableRow key={index}
-                                                          id={"notice_search_table_row_" + index} style={{cursor: "pointer"}}
+                                                          id={"notice_search_table_row_" + index}
                                                           onMouseOver={ (e) => { onMouseRow(index) }}
-                                                          onMouseOut={ (e) => { onMouseOutRow(index) }}>
+                                                      onMouseOut={ (e) => { onMouseOutRow(index) }}>
                                                     <TableCell id={"notice_search_table_row_no_" + index} align="center" style={{ padding: '10px 0px 10px 0px' }}>{notice.no}</TableCell>
-                                                    <TableCell id={"notice_search_table_row_title_" + index} style={{ padding: '10px 0px 10px 0px' }}>{notice.title}</TableCell>
+                                                    <TableCell id={"notice_search_table_row_title_" + index} style={{ display: 'flex', padding: '10px 0px 10px 0px', cursor: 'point' }}>
+                                                        <Link to={"/NoticeDetailPage?no=" + notice.no} className={"main_link_row"}>
+                                                            {notice.title}
+                                                        </Link>
+                                                    </TableCell>
                                                     <TableCell id={"notice_search_table_row_createdAt_" + index} align="center" style={{ padding: '10px 0px 10px 0px' }}>{moment(new Date(notice.createdAt)).format("YYYY-MM-DD HH:mm:ss")}</TableCell>
                                                 </TableRow>
                                             )
-
                                         })
                                     }
                                 </TableBody>
