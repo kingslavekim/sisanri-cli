@@ -12,3 +12,5 @@ export { default as NoticePage } from './page/NoticePage';
 export { default as NoticeDetailPage } from './page/NoticeDetailPage';
 export { default as VolunteerPage } from './page/VolunteerPage';
 export { default as SupportPage } from './page/SupportPage';
+export { default as IrPage } from './page/IrPage';
+export { default as IrDetailPage } from './page/IrDetailPage';

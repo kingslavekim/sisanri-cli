@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Header, Main, Menu, Footer, HelloPage, HistoryPage, MapPage, PlacePage, UseGuidePage, NoticePage, NoticeDetailPage, VolunteerPage, SupportPage} from './components';
+import { Header, Main, Menu, Footer, HelloPage, HistoryPage, MapPage, PlacePage, UseGuidePage, NoticePage, NoticeDetailPage, VolunteerPage, SupportPage, IrPage, IrDetailPage} from './components';
 
 class App extends Component {
     render() {
@@ -19,6 +19,8 @@ class App extends Component {
                     <Route path="/NoticeDetailPage" element={<NoticeDetailPage/>}/>
                     <Route path="/VolunteerPage" element={<VolunteerPage/>}/>
                     <Route path="/SupportPage" element={<SupportPage/>}/>
+                    <Route path="/IrPage" element={<IrPage/>}/>
+                    <Route path="/IrDetailPage" element={<IrDetailPage/>}/>
                 </Routes>
                 <Footer />
             </div>
