@@ -1,30 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import Box from "@mui/material/Box";
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
+import {Table, TableBody, TableCell, TableContainer, TableRow} from "@material-ui/core";
 import moment from "moment";
-import '../../css/Paging.css'
-import banner from "../../image/banner.png";
-import image1 from "../../image/image1.png";
-import image2 from "../../image/image2.png";
 import Typography from "@mui/material/Typography";
+import {Link} from "react-router-dom";
+import axios from "axios";
+import '../../css/Paging.css'
+
+import banner from "../../image/banner.png";
 import plus from "../../image/plus.png";
-import right_arrow from "../../image/right_arrow.png";
-import left_arrow from "../../image/left_arrow.png";
+// import right_arrow from "../../image/right_arrow.png";
+// import left_arrow from "../../image/left_arrow.png";
 import space_right_arrow from "../../image/space_right_arrow.png";
 import space_left_arrow from "../../image/space_left_arrow.png";
+import image1 from "../../image/image1.png";
+import image2 from "../../image/image2.png";
 
 import test1 from "../../image/test/test1.png";
 import test2 from "../../image/test/test2.png";
 import test3 from "../../image/test/test3.png";
 import test4 from "../../image/test/test4.png";
-import test5 from "../../image/test/test5.png";
-import test6 from "../../image/test/test6.png";
-import test7 from "../../image/test/test7.png";
-import test8 from "../../image/test/test8.png";
-import test9 from "../../image/test/test9.png";
-import test10 from "../../image/test/test10.png";
-import {Link} from "react-router-dom";
-import axios from "axios";
 
 function Main() {
     const [noticeList, setNoticeList] = useState([]);
