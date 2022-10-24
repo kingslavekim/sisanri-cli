@@ -9,18 +9,18 @@ class App extends Component {
                 <Header />
                 <Menu />
                 <Routes>
-                    <Route exact path="/" element={<Main/>}/>
-                    <Route exact path="/HelloPage" element={<HelloPage/>}/>
-                    <Route exact path="/HistoryPage" element={<HistoryPage/>}/>
-                    <Route exact path="/MapPage" element={<MapPage/>}/>
-                    <Route exact path="/PlacePage" element={<PlacePage/>}/>
-                    <Route exact path="/UseGuidePage" element={<UseGuidePage/>}/>
-                    <Route exact path="/NoticePage" element={<NoticePage/>}/>
-                    <Route exact path="/NoticeDetailPage" element={<NoticeDetailPage/>}/>
-                    <Route exact path="/VolunteerPage" element={<VolunteerPage/>}/>
-                    <Route exact path="/SupportPage" element={<SupportPage/>}/>
-                    <Route exact path="/IrPage" element={<IrPage/>}/>
-                    <Route exact path="/IrDetailPage" element={<IrDetailPage/>}/>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/HelloPage" element={<HelloPage/>}/>
+                    <Route path="/HistoryPage" element={<HistoryPage/>}/>
+                    <Route path="/MapPage" element={<MapPage/>}/>
+                    <Route path="/PlacePage" element={<PlacePage/>}/>
+                    <Route path="/UseGuidePage" element={<UseGuidePage/>}/>
+                    <Route path="/NoticePage" element={<NoticePage/>}/>
+                    <Route path="/NoticeDetailPage" element={<NoticeDetailPage/>}/>
+                    <Route path="/VolunteerPage" element={<VolunteerPage/>}/>
+                    <Route path="/SupportPage" element={<SupportPage/>}/>
+                    <Route path="/IrPage" element={<IrPage/>}/>
+                    <Route path="/IrDetailPage" element={<IrDetailPage/>}/>
                 </Routes>
                 <Footer />
             </div>
