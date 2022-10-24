@@ -24,8 +24,34 @@ import test8 from "../../image/test/test8.png";
 import test9 from "../../image/test/test9.png";
 import test10 from "../../image/test/test10.png";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 function Main() {
+    const [noticeList, setNoticeList] = useState([]);
+    const [size, setSize] = useState({start: 0, end: 5});
+
+    function onMouseRow(index) {
+        document.getElementById('main_search_table_row_' + index).style.backgroundColor = '#C4C4C4';
+    }
+
+    function onMouseOutRow(index) {
+        document.getElementById('main_search_table_row_' + index).style.backgroundColor = 'white';
+    }
+
+    useEffect(() => {
+        axios.get('/getMainNoticeList', {params: {size: size}}).then(value => {
+            setNoticeList(value.data.data);
+        }).catch(reason => {
+            alert(reason);
+        }).finally(() => {
+        });
+
+        return {}
+    }, [])
+
+    const mainData: any = {};
+    mainData.noticeList = noticeList;
+
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', margin: '0px 0px 30px 0px' }}>
@@ -46,46 +72,87 @@ function Main() {
                 <Box style={{ width: '50%', border: '2px solid #ACACAC' }}>
                     <Box style={{ display:'flex', alignItems: 'center', height: '15%', borderBottom: '2px solid #ACACAC' }}>
                         <Box style={{ width: '80%' }}>
-                            <Typography style={{ marginLeft: '30px', fontSize: '16px', fontWeight: 'bolder' }}>공지사항</Typography>
+                            <Typography style={{ paddingLeft: '20px', fontSize: '16px', fontWeight: 'bolder' }}>공지사항</Typography>
                         </Box>
-                        <Box style={{ display:'flex', justifyContent: 'flex-end', width: '20%', marginRight: '35px' }}>
-                            <img style={{cursor: 'pointer'}} src={plus}  alt="plus"/>
+                        <Box style={{ display:'flex', justifyContent: 'flex-end', width: '20%', padding: '3px 20px 0px 0px' }}>
+                            <Link to="/NoticePage">
+                                <img style={{cursor: 'pointer'}} src={plus}  alt="plus"/>
+                            </Link>
                         </Box>
                     </Box>
 
                     <Box style={{ display:'flex', alignItems: 'center', height: '85%' }}>
                         <TableContainer style={{display: 'flex', justifyContent: 'center'}}>
-                            <Table>
-                                <TableBody id={"main_table_body"}>
-                                    <TableRow style={{display: 'flex', cursor: 'pointer'}}>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>
-                                        <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항1</TableCell>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>
-                                    </TableRow>
-                                    <TableRow style={{display: 'flex', cursor: 'pointer'}}>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>
-                                        <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항2</TableCell>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>
-                                    </TableRow>
-                                    <TableRow style={{display: 'flex', cursor: 'pointer'}}>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>
-                                        <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항3</TableCell>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>
-                                    </TableRow>
-                                    <TableRow style={{display: 'flex', cursor: 'pointer'}}>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>
-                                        <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항4</TableCell>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>
-                                    </TableRow>
-                                    <TableRow style={{display: 'flex', cursor: 'pointer'}}>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>
-                                        <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항5</TableCell>
-                                        <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>
-                                    </TableRow>
+                            <Table style={{width: '100%'}}>
+                                <TableBody id={"main_search_table_body"}>
+                                    {
+                                        mainData.noticeList.map((notice, index) => {
+                                            if (notice.title === undefined) {
+                                                return (
+                                                    <TableRow key={index}
+                                                              id={"main_search_table_row_" + index}>
+                                                        <TableCell id={"main_search_table_row_no_" + index} align="center"style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '6px', border: 'none' }}></TableCell>
+                                                        <TableCell id={"main_search_table_row_title_" + index} style={{display: 'flex', width: '70%', padding: '6px', border: 'none' }}></TableCell>
+                                                        <TableCell id={"main_search_table_row_createdAt_" + index} align="center" style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '6px', border: 'none' }}></TableCell>
+                                                    </TableRow>
+                                                )
+                                            } else {
+                                                return (
+                                                    <TableRow key={index}
+                                                              id={"main_search_table_row_" + index}
+                                                              style={{display: 'flex', cursor: 'pointer'}}
+                                                              onMouseOver={ (e) => { onMouseRow(index) }}
+                                                              onMouseOut={ (e) => { onMouseOutRow(index) }}>
+                                                        <TableCell id={"main_search_table_row_no_" + index} align="center"style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '6px', border: 'none' }}>[공지]</TableCell>
+                                                        <TableCell id={"main_search_table_row_title_" + index} style={{display: 'flex', width: '70%', padding: '6px', border: 'none' }}>
+                                                            <Link to={"/NoticeDetailPage?no=" + notice.no} className={"main_link_row"}>
+                                                                {notice.title}
+                                                            </Link>
+                                                        </TableCell>
+                                                        <TableCell id={"main_search_table_row_createdAt_" + index} align="center" style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '6px', border: 'none' }}>{moment(new Date(notice.createdAt)).format("YYYY-MM-DD")}</TableCell>
+                                                    </TableRow>
+                                                )
+                                            }
+                                        })
+                                    }
                                 </TableBody>
                             </Table>
                         </TableContainer>
                     </Box>
+
+                    {/*<Box style={{ display:'flex', alignItems: 'center', height: '85%' }}>*/}
+                    {/*    <TableContainer style={{display: 'flex', justifyContent: 'center'}}>*/}
+                    {/*        <Table>*/}
+                    {/*            <TableBody id={"main_table_body"}>*/}
+                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항1</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
+                    {/*                </TableRow>*/}
+                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항2</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
+                    {/*                </TableRow>*/}
+                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항3</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
+                    {/*                </TableRow>*/}
+                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항4</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
+                    {/*                </TableRow>*/}
+                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항5</TableCell>*/}
+                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
+                    {/*                </TableRow>*/}
+                    {/*            </TableBody>*/}
+                    {/*        </Table>*/}
+                    {/*    </TableContainer>*/}
+                    {/*</Box>*/}
                 </Box>
             </Box>
 
@@ -107,22 +174,22 @@ function Main() {
                 <img style={{cursor: 'pointer'}} src={space_right_arrow}  alt="space_right_arrow"/>
             </Box>
 
-            <Box style={{ display: 'flex', width: '70%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>
-                <Box style={{ fontSize: '24px', fontWeight: 'bolder', margin: '0px 0px 10px 0px' }}>
-                    아름다운 동행
-                </Box>
-            </Box>
+            {/*<Box style={{ display: 'flex', width: '70%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>*/}
+            {/*    <Box style={{ fontSize: '24px', fontWeight: 'bolder', margin: '0px 0px 10px 0px' }}>*/}
+            {/*        아름다운 동행*/}
+            {/*    </Box>*/}
+            {/*</Box>*/}
 
-            <Box style={{ display: 'flex', width: '70%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>
-                <img style={{cursor: 'pointer'}} src={left_arrow}  alt="left_arrow"/>
-                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test5}  alt="test5"/>
-                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test6}  alt="test6"/>
-                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test7}  alt="test7"/>
-                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test8}  alt="test8"/>
-                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test9}  alt="test9"/>
-                <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test10}  alt="test10"/>
-                <img style={{cursor: 'pointer'}} src={right_arrow}  alt="right_arrow"/>
-            </Box>
+            {/*<Box style={{ display: 'flex', width: '70%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>*/}
+            {/*    <img style={{cursor: 'pointer'}} src={left_arrow}  alt="left_arrow"/>*/}
+            {/*    <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test5}  alt="test5"/>*/}
+            {/*    <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test6}  alt="test6"/>*/}
+            {/*    <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test7}  alt="test7"/>*/}
+            {/*    <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test8}  alt="test8"/>*/}
+            {/*    <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test9}  alt="test9"/>*/}
+            {/*    <img style={{cursor: 'pointer', width: '160px', border: '1px solid black'}} src={test10}  alt="test10"/>*/}
+            {/*    <img style={{cursor: 'pointer'}} src={right_arrow}  alt="right_arrow"/>*/}
+            {/*</Box>*/}
         </Box>
     );
 }
