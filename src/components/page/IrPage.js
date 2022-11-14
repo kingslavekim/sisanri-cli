@@ -35,14 +35,14 @@ function IrPage(props) {
     }
 
     useEffect(() => {
-        axios.get('/getIrCount', {}).then(value => {
+        axios.get('/api/getIrCount', {}).then(value => {
             setCount(value.data.data);
         }).catch(reason => {
             alert(reason);
         }).finally(() => {
         });
 
-        axios.get('/getIrList', {params: {size: size}}).then(value => {
+        axios.get('/api/getIrList', {params: {size: size}}).then(value => {
             setIrList(value.data.data);
         }).catch(reason => {
             alert(reason);

@@ -14,7 +14,7 @@ function NoticeDetailPage(props) {
         let param = new URLSearchParams(query);
         let no = param.get('no');
 
-        axios.get('/getNoticeObject?no=' + no, {}).then(value => {
+        axios.get('/api/getNoticeObject?no=' + no, {}).then(value => {
             setNoticeObject(value.data.data);
         }).catch(reason => {
             alert(reason);

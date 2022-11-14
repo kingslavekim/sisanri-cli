@@ -14,7 +14,7 @@ const PostSearchModal = forwardRef((props, ref) => {
     useImperativeHandle(ref, () => ({
         modalReload: (_id: string) => {
             document.getElementById("loading").style.display = 'flex';
-            axios.get('/getPostObject', {params: {_id: _id}}).then(value => {
+            axios.get('/api/getPostObject', {params: {_id: _id}}).then(value => {
                 postModalObject._id = value.data.data._id;
                 postModalObject.usage = value.data.data.usage;
                 postModalObject.categoryId = value.data.data.categoryId;
@@ -49,7 +49,7 @@ const PostSearchModal = forwardRef((props, ref) => {
 
     function btn_post_modal_search_click() {
         document.getElementById("loading").style.display = 'flex';
-        axios.get('/getPostObject', {params: {_id: document.getElementById('post__id').value}}).then(value => {
+        axios.get('/api/getPostObject', {params: {_id: document.getElementById('post__id').value}}).then(value => {
             postModalObject._id = value.data.data._id;
             postModalObject.usage = value.data.data.usage;
             postModalObject.categoryId = value.data.data.categoryId;
@@ -73,7 +73,7 @@ const PostSearchModal = forwardRef((props, ref) => {
 
     function btn_post_modal_delete_click(usage: boolean) {
         if (usage) {
-            axios.get('/postUsageFalse', {params: {_id: document.getElementById('post__id').value}}).then(value => {
+            axios.get('/api/postUsageFalse', {params: {_id: document.getElementById('post__id').value}}).then(value => {
                 postModalObject.usage = false;
                 alert('변경되었습니다.');
             }).catch(reason => {
@@ -83,7 +83,7 @@ const PostSearchModal = forwardRef((props, ref) => {
                 setToken(!token);
             });
         } else {
-            axios.get('/postUsageTrue', {params: {_id: document.getElementById('post__id').value}}).then(value => {
+            axios.get('/api/postUsageTrue', {params: {_id: document.getElementById('post__id').value}}).then(value => {
                 postModalObject.usage = true;
                 alert('변경되었습니다.');
             }).catch(reason => {
@@ -97,7 +97,7 @@ const PostSearchModal = forwardRef((props, ref) => {
 
     function btn_reply_click_1(_id: object, blindedAt: number) {
         if (blindedAt !== 0) {
-            axios.get('/replyBlindFalse', {params: {_id: _id}}).then(value => {
+            axios.get('/api/replyBlindFalse', {params: {_id: _id}}).then(value => {
                 alert('변경되었습니다.');
             }).catch(reason => {
                 alert(reason);
@@ -105,7 +105,7 @@ const PostSearchModal = forwardRef((props, ref) => {
                 btn_post_modal_search_click();
             });
         } else {
-            axios.get('/replyBlindTrue', {params: {_id: _id}}).then(value => {
+            axios.get('/api/replyBlindTrue', {params: {_id: _id}}).then(value => {
                 alert('변경되었습니다.');
             }).catch(reason => {
                 alert(reason);
@@ -117,7 +117,7 @@ const PostSearchModal = forwardRef((props, ref) => {
 
     function btn_reply_click_2(_id: object, usage: boolean) {
         if (usage) {
-            axios.get('/replyUsageFalse', {params: {_id: _id}}).then(value => {
+            axios.get('/api/replyUsageFalse', {params: {_id: _id}}).then(value => {
                 alert('변경되었습니다.');
             }).catch(reason => {
                 alert(reason);
@@ -125,7 +125,7 @@ const PostSearchModal = forwardRef((props, ref) => {
                 btn_post_modal_search_click();
             });
         } else {
-            axios.get('/replyUsageTrue', {params: {_id: _id}}).then(value => {
+            axios.get('/api/replyUsageTrue', {params: {_id: _id}}).then(value => {
                 alert('변경되었습니다.');
             }).catch(reason => {
                 alert(reason);

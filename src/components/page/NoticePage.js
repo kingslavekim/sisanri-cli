@@ -35,14 +35,14 @@ function NoticePage(props) {
     }
 
     useEffect(() => {
-        axios.get('/getNoticeCount', {}).then(value => {
+        axios.get('/api/getNoticeCount', {}).then(value => {
             setCount(value.data.data);
         }).catch(reason => {
             alert(reason);
         }).finally(() => {
         });
 
-        axios.get('/getNoticeList', {params: {size: size}}).then(value => {
+        axios.get('/api/getNoticeList', {params: {size: size}}).then(value => {
             setNoticeList(value.data.data);
         }).catch(reason => {
             alert(reason);

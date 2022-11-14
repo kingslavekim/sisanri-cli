@@ -34,7 +34,7 @@ function Main() {
     }
 
     useEffect(() => {
-        axios.get('/getMainNoticeList', {params: {size: size}}).then(value => {
+        axios.get('/api/getMainNoticeList', {params: {size: size}}).then(value => {
             setNoticeList(value.data.data);
         }).catch(reason => {
             alert(reason);

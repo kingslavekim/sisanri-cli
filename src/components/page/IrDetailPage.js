@@ -14,7 +14,7 @@ function IrDetailPage(props) {
         let param = new URLSearchParams(query);
         let no = param.get('no');
 
-        axios.get('/getIrObject?no=' + no, {}).then(value => {
+        axios.get('/api/getIrObject?no=' + no, {}).then(value => {
             setIrObject(value.data.data);
         }).catch(reason => {
             alert(reason);

@@ -92,7 +92,7 @@ function PostSearch(props) {
         let usageValue = document.getElementById("usage_select_box").options[document.getElementById("usage_select_box").selectedIndex].value;
         let categoryValue = document.getElementById("category_select_box").options[document.getElementById("category_select_box").selectedIndex].value;
 
-        axios.get('/getPostCount', {params: {search: search, usage: usageValue, category: categoryValue}}).then(value => {
+        axios.get('/api/getPostCount', {params: {search: search, usage: usageValue, category: categoryValue}}).then(value => {
             setCount(value.data.data);
         }).catch(reason => {
             alert(reason);
@@ -100,7 +100,7 @@ function PostSearch(props) {
         });
 
         if (sortIndex === 0) {
-            axios.get('/getPostList', {params: {search: search, usage: usageValue, category: categoryValue, size: size}}).then(value => {
+            axios.get('/api/getPostList', {params: {search: search, usage: usageValue, category: categoryValue, size: size}}).then(value => {
                 setPostList(value.data.data);
             }).catch(reason => {
                 alert(reason);
@@ -108,7 +108,7 @@ function PostSearch(props) {
                 setLoading(false);
             });
         } else {
-            axios.get('/getPostSortList', {params: {search: search, usage: usageValue, category: categoryValue, size: size, sortIndex: sortIndex, sort: sort}}).then(value => {
+            axios.get('/api/getPostSortList', {params: {search: search, usage: usageValue, category: categoryValue, size: size, sortIndex: sortIndex, sort: sort}}).then(value => {
                 setPostList(value.data.data);
             }).catch(reason => {
                 alert(reason);
@@ -195,7 +195,7 @@ function PostSearch(props) {
         setLoading(true);
 
         if (usage) {
-            axios.get('/postUsageFalse', {params: {_id: _id}}).then(value => {
+            axios.get('/api/postUsageFalse', {params: {_id: _id}}).then(value => {
                 alert('변경되었습니다.');
                 setToken(!token);
             }).catch(reason => {
@@ -203,7 +203,7 @@ function PostSearch(props) {
             }).finally(() => {
             });
         } else {
-            axios.get('/postUsageTrue', {params: {_id: _id}}).then(value => {
+            axios.get('/api/postUsageTrue', {params: {_id: _id}}).then(value => {
                 alert('변경되었습니다.');
                 setToken(!token);
             }).catch(reason => {
@@ -223,13 +223,13 @@ function PostSearch(props) {
         for (let i=0; i<rowCount; i++) {
             if (document.getElementById("post_search_table_row_chk_" + i.toString()).checked) {
                 if (usage) {
-                    axios.get('/postUsageFalse', {params: {_id: document.getElementById("post_search_table_row__id_" + i.toString()).innerText}}).then(value => {
+                    axios.get('/api/postUsageFalse', {params: {_id: document.getElementById("post_search_table_row__id_" + i.toString()).innerText}}).then(value => {
                     }).catch(reason => {
                         alert(reason);
                     }).finally(() => {
                     });
                 } else {
-                    axios.get('/postUsageTrue', {params: {_id: document.getElementById("post_search_table_row__id_" + i.toString()).innerText}}).then(value => {
+                    axios.get('/api/postUsageTrue', {params: {_id: document.getElementById("post_search_table_row__id_" + i.toString()).innerText}}).then(value => {
                     }).catch(reason => {
                         alert(reason);
                     }).finally(() => {
