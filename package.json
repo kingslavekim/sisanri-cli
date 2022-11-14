@@ -2,7 +2,7 @@
   "name": "comu_manager",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5001",
+  "proxy": "http://xn--ob0bs3kfbz4y86ca801dzoi78ec6guxx.com:5001",
   "dependencies": {
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
