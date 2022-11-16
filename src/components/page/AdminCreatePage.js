@@ -12,6 +12,7 @@ import home from "../../image/home.png";
 import {TextField} from "@material-ui/core";
 import Button from "@mui/material/Button";
 import {Link} from "react-router-dom";
+ReactQuill.register('modules/ImageResize', ImageResize);
 
 function AdminCreatePage(props) {
     const [createObject, setCreateObject] = useState({});
