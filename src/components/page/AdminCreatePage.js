@@ -38,13 +38,13 @@ function AdminCreatePage(props) {
                     ['clean']
                 ],
 
-                ImageResize: {
-                    parchment: Quill .import('parchment')
-                },
-
                 handlers: {
                     image: imageHandler,
                 },
+            },
+
+            ImageResize: {
+                parchment: Quill .import('parchment')
             },
         };
     }, []);
