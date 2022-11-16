@@ -19,6 +19,7 @@
     "config": "^3.3.6",
     "material-icons": "^1.10.4",
     "moment": "^2.29.1",
+    "quill-image-resize": "^3.0.9",
     "react": "^17.0.2",
     "react-async": "^10.0.1",
     "react-datepicker": "^4.8.0",

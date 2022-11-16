@@ -4,6 +4,7 @@ import moment from "moment";
 import axios from "axios";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import ImageResize from 'quill-image-resize';
 import Select from 'react-select'
 
 import small_banner from "../../image/small_banner.png";
@@ -35,6 +36,11 @@ function AdminCreatePage(props) {
                     ['image'],
                     ['clean']
                 ],
+
+                ImageResize: {
+                    parchment: ReactQuill.import('parchment')
+                },
+
                 handlers: {
                     image: imageHandler,
                 },
