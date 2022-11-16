@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Box from "@mui/material/Box";
 import moment from "moment";
 import axios from "axios";
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import ImageResize from 'quill-image-resize';
 import Select from 'react-select'
@@ -12,7 +12,7 @@ import home from "../../image/home.png";
 import {TextField} from "@material-ui/core";
 import Button from "@mui/material/Button";
 import {Link} from "react-router-dom";
-ReactQuill.register('modules/ImageResize', ImageResize);
+Quill.register('modules/ImageResize', ImageResize);
 
 function AdminCreatePage(props) {
     const [createObject, setCreateObject] = useState({});
@@ -39,7 +39,7 @@ function AdminCreatePage(props) {
                 ],
 
                 ImageResize: {
-                    parchment: ReactQuill.import('parchment')
+                    parchment: Quill .import('parchment')
                 },
 
                 handlers: {
