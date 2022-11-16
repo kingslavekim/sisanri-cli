@@ -37,7 +37,7 @@ function Header() {
                     <Link  id={"header_btn_5"} className={"header_menu"} to="/VolunteerPage" onClick={(e)=>{closeMenu()}}>봉사지원</Link>
                     <Link  id={"header_btn_6"} className={"header_menu"} to="/SupportPage" onClick={(e)=>{closeMenu()}}>후원</Link>
                     <Link  id={"header_btn_7"} className={"header_menu"} to="/IrPage" onClick={(e)=>{closeMenu()}}>재정공개</Link>
-                    <Link  id={"header_btn_8"} className={"header_menu"} to="/Gallery" onClick={(e)=>{closeMenu()}}>갤러리</Link>
+                    <Link  id={"header_btn_8"} className={"header_menu"} to="/GalleryPage" onClick={(e)=>{closeMenu()}}>갤러리</Link>
                 </Box>
             </Box>
         </Box>

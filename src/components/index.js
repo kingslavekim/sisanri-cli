@@ -14,3 +14,8 @@ export { default as VolunteerPage } from './page/VolunteerPage';
 export { default as SupportPage } from './page/SupportPage';
 export { default as IrPage } from './page/IrPage';
 export { default as IrDetailPage } from './page/IrDetailPage';
+export { default as GalleryPage } from './page/GalleryPage';
+export { default as GalleryDetailPage } from './page/GalleryDetailPage';
+
+export { default as AdminPage } from './page/AdminPage';
+export { default as AdminCreatePage } from './page/AdminCreatePage';

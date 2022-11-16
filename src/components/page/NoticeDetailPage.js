@@ -10,9 +10,8 @@ function NoticeDetailPage(props) {
     const [noticeObject, setNoticeObject] = useState({});
 
     useEffect(() => {
-        let query = window.location.search;
-        let param = new URLSearchParams(query);
-        let no = param.get('no');
+        let query = window.location.href;
+        let no = query.split('?')[1].split('=')[1]
 
         axios.get('/api/getNoticeObject?no=' + no, {}).then(value => {
             setNoticeObject(value.data.data);

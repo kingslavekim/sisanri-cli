@@ -6,15 +6,15 @@ import axios from "axios";
 import small_banner from "../../image/small_banner.png";
 import home from "../../image/home.png";
 
-function IrDetailPage(props) {
-    const [irObject, setIrObject] = useState({});
+function GalleryDetailPage(props) {
+    const [galleryObject, setGalleryObject] = useState({});
 
     useEffect(() => {
         let query = window.location.href;
         let no = query.split('?')[1].split('=')[1]
 
-        axios.get('/api/getIrObject?no=' + no, {}).then(value => {
-            setIrObject(value.data.data);
+        axios.get('/api/getGalleryObject?no=' + no, {}).then(value => {
+            setGalleryObject(value.data.data);
         }).catch(reason => {
             alert(reason);
         }).finally(() => {
@@ -23,8 +23,8 @@ function IrDetailPage(props) {
         return {}
     }, [])
 
-    const irData: any = {};
-    irData.irObject = irObject;
+    const galleryData: any = {};
+    galleryData.galleryObject = galleryObject;
 
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -34,10 +34,10 @@ function IrDetailPage(props) {
 
             <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between' }}>
                 <Box style={{ display: 'flex', width: '100%', borderBottom: '2px solid black'}}>
-                    <Box className={"main_header_text"}>공지사항</Box>
+                    <Box className={"main_header_text"}>갤러리</Box>
                     <Box className={"main_header_path_text"}>
                         <img src={home}  alt="home"/>
-                        <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 공지사항</Box>
+                        <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 갤러리</Box>
                     </Box>
                 </Box>
             </Box>
@@ -45,12 +45,12 @@ function IrDetailPage(props) {
             <Box style={{ display: 'flex', width: '75%', justifyContent: 'center', margin: '20px 0px 0px 0px' }}>
                 <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
                     <Box style={{ display: 'flex', flexDirection: 'column', width: '100%', background: '#D9D9D9', borderTop: '1px solid black', borderBottom: '1px solid black'}}>
-                        <Box className={"ir_detail_page_main_row1"}>{irData.irObject.title}</Box>
-                        <Box className={"ir_detail_page_main_row2"}>작성일 : {moment(new Date(irData.irObject.createdAt)).format("YYYY-MM-DD")}</Box>
+                        <Box className={"gallery_detail_page_main_row1"}>{galleryData.galleryObject.title}</Box>
+                        <Box className={"gallery_detail_page_main_row2"}>작성일 : {moment(new Date(galleryData.galleryObject.createdAt)).format("YYYY-MM-DD")}</Box>
                     </Box>
 
                     <Box style={{ display: 'flex', width: '90%', borderBottom: '1px solid black', wordBreak: 'break-all' }}>
-                        <Box className="ck-content" dangerouslySetInnerHTML={{__html: irData.irObject.content}}/>
+                        <Box className="ck-content" dangerouslySetInnerHTML={{__html: galleryData.galleryObject.content}}/>
                     </Box>
                 </Box>
             </Box>
@@ -58,4 +58,4 @@ function IrDetailPage(props) {
     );
 }
 
-export default IrDetailPage;
+export default GalleryDetailPage;
