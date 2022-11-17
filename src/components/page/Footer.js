@@ -13,7 +13,7 @@ function Footer() {
                     <Box style={{ margin: '30px 0px 3px 0px' }} className={"footer_font2"}>대표자 : 강희진</Box>
                     <Box className={"footer_font2"}>사업자등록번호 : 302-82-73308</Box>
                     <Box className={"footer_font2"}>주소 : 충청남도 예산군 대술면 시산동길 68</Box>
-                    <Box className={"footer_font2"}>이메일 : fa-ac@hanmail.net </Box>
+                    <Box className={"footer_font2"}>이메일 : sisan2022@naver.com </Box>
                     <Box className={"footer_font2"}>Copyright © 2022. 시산리아리랑 돌봄공동체. All right reserved.</Box>
                 </Box>
                 <Box style={{ display: 'flex', alignItems: 'center', width: '25%' }}>

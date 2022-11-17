@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header, Main, Menu, Footer, HelloPage, HistoryPage, MapPage, PlacePage,
-    UseGuidePage, NoticePage, NoticeDetailPage, VolunteerPage, SupportPage, IrPage,
+    UseGuidePage, UseFeePage, NoticePage, NoticeDetailPage, VolunteerPage, SupportPage, IrPage,
     IrDetailPage, GalleryPage, GalleryDetailPage, AdminPage, AdminCreatePage} from './components';
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
                     <Route path="/MapPage" element={<MapPage/>}/>
                     <Route path="/PlacePage" element={<PlacePage/>}/>
                     <Route path="/UseGuidePage" element={<UseGuidePage/>}/>
+                    <Route path="/UseFeePage" element={<UseFeePage/>}/>
                     <Route path="/NoticePage" element={<NoticePage/>}/>
                     <Route path="/NoticeDetailPage" element={<NoticeDetailPage/>}/>
                     <Route path="/VolunteerPage" element={<VolunteerPage/>}/>

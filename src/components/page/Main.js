@@ -23,7 +23,7 @@ import test4 from "../../image/test/test4.png";
 
 function Main() {
     const [noticeList, setNoticeList] = useState([]);
-    const [size, setSize] = useState({start: 0, end: 5});
+    const [size] = useState({start: 0, end: 5});
 
     function onMouseRow(index) {
         document.getElementById('main_search_table_row_' + index).style.backgroundColor = '#C4C4C4';

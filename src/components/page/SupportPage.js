@@ -53,7 +53,7 @@ function SupportPage(props) {
                     </Box>
                     <Box className={"volunteer_page_main_row2"}>
                         <Box>
-                            • 온라인 입금 : 은행계좌안내 (농협은행 351-1163-2855-93 예금주:시산리아리랑공동체)
+                            • 온라인 입금 : 은행계좌안내 (농협은행 351-1251-7793-13 예금주:시산리아리랑공동체)
                         </Box>
                     </Box>
                 </Box>
