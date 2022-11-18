@@ -398,3 +398,8 @@ ul.pagination li a.active {
 .ql-container {
     min-height: 700px;
 }
+
+.slick-list {
+    height: 300px;
+}
+

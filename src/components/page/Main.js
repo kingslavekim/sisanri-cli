@@ -9,17 +9,9 @@ import '../../css/Paging.css'
 
 import banner from "../../image/banner.png";
 import plus from "../../image/plus.png";
-// import right_arrow from "../../image/right_arrow.png";
-// import left_arrow from "../../image/left_arrow.png";
-import space_right_arrow from "../../image/space_right_arrow.png";
-import space_left_arrow from "../../image/space_left_arrow.png";
 import image1 from "../../image/image1.png";
 import image2 from "../../image/image2.png";
-
-import test1 from "../../image/test/test1.png";
-import test2 from "../../image/test/test2.png";
-import test3 from "../../image/test/test3.png";
-import test4 from "../../image/test/test4.png";
+import ImageSlider from "../common/ImageSlider";
 
 function Main() {
     const [noticeList, setNoticeList] = useState([]);
@@ -114,40 +106,6 @@ function Main() {
                             </Table>
                         </TableContainer>
                     </Box>
-
-                    {/*<Box style={{ display:'flex', alignItems: 'center', height: '85%' }}>*/}
-                    {/*    <TableContainer style={{display: 'flex', justifyContent: 'center'}}>*/}
-                    {/*        <Table>*/}
-                    {/*            <TableBody id={"main_table_body"}>*/}
-                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항1</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
-                    {/*                </TableRow>*/}
-                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항2</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
-                    {/*                </TableRow>*/}
-                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항3</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
-                    {/*                </TableRow>*/}
-                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항4</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
-                    {/*                </TableRow>*/}
-                    {/*                <TableRow style={{display: 'flex', cursor: 'pointer'}}>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '10%', padding: '12px', border: 'none', fontWeight: 'bolder' }}>[공지]</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', width: '70%', padding: '12px', border: 'none' }}>시산리 아리랑 돌봄공동체 공지사항5</TableCell>*/}
-                    {/*                    <TableCell style={{display: 'flex', justifyContent: 'center', width: '20%', padding: '12px', border: 'none' }}>0000-00-00</TableCell>*/}
-                    {/*                </TableRow>*/}
-                    {/*            </TableBody>*/}
-                    {/*        </Table>*/}
-                    {/*    </TableContainer>*/}
-                    {/*</Box>*/}
                 </Box>
             </Box>
 
@@ -160,13 +118,8 @@ function Main() {
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '70%', justifyContent: 'space-between', margin: '10px 0px 0px 0px' }}>
-                <img style={{cursor: 'pointer'}} src={space_left_arrow}  alt="space_left_arrow"/>
-                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test1}  alt="test1"/>
-                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test2}  alt="test2"/>
-                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test3}  alt="test3"/>
-                <img style={{cursor: 'pointer', width: '250px', border: '1px solid black'}} src={test4}  alt="test4"/>
-                <img style={{cursor: 'pointer'}} src={space_right_arrow}  alt="space_right_arrow"/>
+            <Box style={{ display: 'flex', width: '70%', justifyContent: 'center', margin: '10px 0px 0px 0px' }}>
+                <ImageSlider/>
             </Box>
 
             {/*<Box style={{ display: 'flex', width: '70%', flexDirection: 'column', alignItems: 'center', margin: '80px 0px 0px 0px' }}>*/}
