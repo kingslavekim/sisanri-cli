@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Box from "@mui/material/Box";
 import {Link} from "react-router-dom";
 
-import small_banner from "../../image/small_banner.png";
+import small_banner from "../../image/small_banner.jpg";
 import home from "../../image/home.png";
 
 function HistoryPage(props) {

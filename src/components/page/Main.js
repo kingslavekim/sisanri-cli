@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 import '../../css/Paging.css'
 
-import banner from "../../image/banner.png";
+import banner from "../../image/banner.jpg";
 import plus from "../../image/plus.png";
 import image1 from "../../image/image1.png";
 import image2 from "../../image/image2.png";

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Box from "@mui/material/Box";
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 
-import small_banner from "../../image/small_banner.png";
+import small_banner from "../../image/small_banner.jpg";
 import home from "../../image/home.png";
 import division from "../../image/division.png";
 import volunteer_guide from "../../image/volunteer_guide.png";

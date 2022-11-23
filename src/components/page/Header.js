@@ -5,6 +5,7 @@ import '../../css/Paging.css'
 import { Link } from 'react-router-dom';
 
 import logo from '../../image/logo.PNG'
+import font_logo from '../../image/font_icon_black.png'
 
 function Header() {
     function showMenu() {
@@ -23,8 +24,8 @@ function Header() {
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onMouseOut={(e)=>{closeMenu()}}>
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', padding: '30px 0px 30px 0px' }}>
                 <Box style={{ display: 'flex', cursor: 'pointer' }} onClick={(e)=>{goUrl('/')}}>
-                    <img style={{width: '50px'}} src={logo}  alt="logo"/>
-                    <Typography style={{ marginLeft: '20px', fontSize: '20px', fontWeight: 'bolder' }}>시산리아리랑 돌봄공동체</Typography>
+                    <img style={{height: '80px'}} src={logo}  alt="logo"/>
+                    <img style={{height: '80px'}} src={font_logo}  alt="font_logo"/>
                 </Box>
             </Box>
 
