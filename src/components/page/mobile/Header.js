@@ -12,17 +12,21 @@ function Header() {
         window.location.href = url;
     }
 
+    function closeBurder() {
+        document.getElementById('react-burger-cross-btn').click();
+    }
+
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <BurgerMenu width={ '70%' } right>
-                <Link className={"mobile_header_menu"} to="/MHelloPage">센터소개</Link>
-                <Link className={"mobile_header_menu"} to="/MPlacePage" >시설안내</Link>
-                <Link className={"mobile_header_menu"} to="/MUseGuidePage">이용안내</Link>
-                <Link className={"mobile_header_menu"} to="/MNoticePage">공지사항</Link>
-                <Link className={"mobile_header_menu"} to="/MVolunteerPage">봉사지원</Link>
-                <Link className={"mobile_header_menu"} to="/MSupportPage">후원</Link>
-                <Link className={"mobile_header_menu"} to="/MIrPage">재정공개</Link>
-                <Link className={"mobile_header_menu"} to="/MGalleryPage">갤러리</Link>
+                <Link className={"mobile_header_menu"} to="/MHelloPage" onClick={(e)=>{closeBurder()}}>센터소개</Link>
+                <Link className={"mobile_header_menu"} to="/MPlacePage" onClick={(e)=>{closeBurder()}}>시설안내</Link>
+                <Link className={"mobile_header_menu"} to="/MUseGuidePage" onClick={(e)=>{closeBurder()}}>이용안내</Link>
+                <Link className={"mobile_header_menu"} to="/MNoticePage" onClick={(e)=>{closeBurder()}}>공지사항</Link>
+                <Link className={"mobile_header_menu"} to="/MVolunteerPage" onClick={(e)=>{closeBurder()}}>봉사지원</Link>
+                <Link className={"mobile_header_menu"} to="/MSupportPage" onClick={(e)=>{closeBurder()}}>후원</Link>
+                <Link className={"mobile_header_menu"} to="/MIrPage" onClick={(e)=>{closeBurder()}}>재정공개</Link>
+                <Link className={"mobile_header_menu"} to="/MGalleryPage" onClick={(e)=>{closeBurder()}}>갤러리</Link>
             </BurgerMenu>
 
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', padding: '30px 0px 30px 0px' }}>
