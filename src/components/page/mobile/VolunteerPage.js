@@ -36,7 +36,7 @@ function MVolunteerPage(props) {
                     </Box>
                     <Box className={"volunteer_page_main_row2"}>
                         <Box>
-                            <img style={{ padding: '10px 0px 10px 0px', width: '340px' }} src={volunteer_guide}  alt="volunteer_guide"/>
+                            <img style={{ padding: '10px 0px 10px 0px', width: '97%' }} src={volunteer_guide}  alt="volunteer_guide"/>
                         </Box>
                     </Box>
 
@@ -55,7 +55,7 @@ function MVolunteerPage(props) {
                         <Box className={"volunteer_page_main_row1"}>봉사지원 종류</Box>
                     </Box>
                     <Box className={"volunteer_page_main_row2"}>
-                        <Box style={{width: '340px'}}>
+                        <Box style={{width: '97%'}}>
                             <TableContainer style={{display: 'flex', justifyContent: 'center', padding: '10px 0px 15px 0px'}}>
                                 <Table>
                                     <TableHead style={{background: 'white'}}>

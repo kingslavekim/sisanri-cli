@@ -18,10 +18,10 @@ function MSupportPage(props) {
 
             <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between' }}>
                 <Box style={{ display: 'flex', width: '100%', borderBottom: '2px solid black'}}>
-                    <Box className={"mobile_main_header_text"}>봉사지원</Box>
+                    <Box className={"mobile_main_header_text"}>후원</Box>
                     <Box className={"main_header_path_text"}>
                         <img src={home}  alt="home"/>
-                        <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 봉사지원</Box>
+                        <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 후원</Box>
                     </Box>
                 </Box>
             </Box>

@@ -550,7 +550,7 @@ ul.pagination li a.active {
 }
 
 .mobile_place_page_main_row5 {
-    width: 360px;
+    width: 100%;
     max-height: 500px;
     padding: 10px 0px 10px 0px;
 }
@@ -565,7 +565,7 @@ ul.pagination li a.active {
 }
 
 .mobile_place_page_main_row7 {
-    width: 360px;
+    width: 100%;
     max-height: 500px;
     padding: 10px 0px 10px 0px;
 }

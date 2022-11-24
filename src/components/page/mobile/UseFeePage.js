@@ -43,7 +43,7 @@ function MUseFeePage(props) {
                         </Box>
 
                         <Box className={"use_guide_page_main_row2"}>
-                            <Box style={{width: '340px'}}>
+                            <Box style={{width: '97%'}}>
                                 <TableContainer style={{display: 'flex', justifyContent: 'center', padding: '10px 0px 15px 0px'}}>
                                     <Table>
                                         <TableHead style={{background: 'white'}}>
@@ -88,9 +88,9 @@ function MUseFeePage(props) {
                         </Box>
 
                         <Box className={"use_guide_page_main_row2"}>
-                            <Box style={{width: '32 0px'}}>
+                            <Box style={{width: '97%'}}>
                                 <TableContainer style={{display: 'flex', justifyContent: 'center', padding: '10px 0px 15px 0px'}}>
-                                    <Table style={{ marginLeft: '70px'}}>
+                                    <Table style={{ marginLeft: '120px'}}>
                                         <TableHead style={{background: 'white'}}>
                                             <TableRow>
                                                 <TableCell align="center" style={{ width: '14%', fontSize: '12px', padding: '0px', border: '1px solid black' }}>등급</TableCell>
@@ -124,7 +124,7 @@ function MUseFeePage(props) {
                         </Box>
 
                         <Box className={"use_guide_page_main_row2"}>
-                            <Box style={{width: '340px'}}>
+                            <Box style={{width: '97%'}}>
                                 <TableContainer style={{display: 'flex', justifyContent: 'center', padding: '10px 0px 15px 0px'}}>
                                     <Table>
                                         <TableHead style={{background: 'white'}}>
@@ -162,14 +162,14 @@ function MUseFeePage(props) {
                         </Box>
 
                         <Box className={"use_guide_page_main_row3"}>
-                            <img style={{width: '21px'}} src={division}  alt="division"/>
+                            <img style={{ width: '21px', height: '21px' }} src={division}  alt="division"/>
                             <Box className={"use_guide_page_main_row1"}>20일 이용 시 예상 이용비용 (점심 이용 시)</Box>
                         </Box>
 
                         <Box className={"use_guide_page_main_row2"}>
-                            <Box style={{width: '340px'}}>
+                            <Box style={{width: '97%'}}>
                                 <TableContainer style={{display: 'flex', justifyContent: 'center', padding: '10px 0px 15px 0px'}}>
-                                    <Table style={{ marginLeft: '60px'}}>
+                                    <Table style={{ marginLeft: '100px'}}>
                                         <TableHead style={{background: 'white'}}>
                                             <TableRow>
                                                 <TableCell align="center" style={{ width: '30%', fontSize: '12px', padding: '5px', border: '1px solid black' }}>시간</TableCell>

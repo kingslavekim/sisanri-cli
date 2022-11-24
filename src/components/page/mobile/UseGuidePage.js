@@ -101,7 +101,7 @@ function MUseGuidePage(props) {
 
                         <Box className={"use_guide_page_main_row2"}>
                             <Box>
-                                <img style={{ padding: '10px 0px 10px 0px', width: '340px' }} src={use_guide}  alt="use_guide"/>
+                                <img style={{ padding: '10px 0px 10px 0px', width: '97%' }} src={use_guide}  alt="use_guide"/>
                             </Box>
                         </Box>
                         
