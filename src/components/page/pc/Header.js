@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
-import '../../css/Paging.css'
+import '../../../css/Paging.css'
 import { Link } from 'react-router-dom';
 
-import logo from '../../image/logo.PNG'
-import font_logo from '../../image/font_icon_black.png'
+import logo from '../../../image/logo.PNG'
+import font_logo from '../../../image/font_icon_black.png'
 
 function Header() {
     function showMenu() {

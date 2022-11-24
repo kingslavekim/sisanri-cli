@@ -6,8 +6,8 @@ import 'react-quill/dist/quill.snow.css';
 import ImageResize from 'quill-image-resize';
 import Select from 'react-select'
 
-import small_banner from "../../image/small_banner.jpg";
-import home from "../../image/home.png";
+import small_banner from "../../../image/small_banner.jpg";
+import home from "../../../image/home.png";
 import {TextField} from "@material-ui/core";
 import Button from "@mui/material/Button";
 Quill.register('modules/ImageResize', ImageResize);

@@ -6,8 +6,8 @@ import axios from "axios";
 import Pagination from "react-js-pagination";
 import {Link} from "react-router-dom";
 
-import small_banner from "../../image/small_banner.jpg";
-import home from "../../image/home.png";
+import small_banner from "../../../image/small_banner.jpg";
+import home from "../../../image/home.png";
 
 function NoticePage(props) {
     const [token, setToken] = useState(true);

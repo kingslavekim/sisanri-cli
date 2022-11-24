@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import '../../css/Paging.css'
+import '../../../css/Paging.css'
 
-import call from "../../image/call.png";
-import font_logo from '../../image/font_icon_white.png'
+import call from "../../../image/call.png";
+import font_logo from '../../../image/font_icon_white.png'
 
 function Footer() {
     return (

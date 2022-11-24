@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import '../../css/Paging.css'
+import '../../../css/Paging.css'
 import { Link } from 'react-router-dom';
 
 function Menu() {

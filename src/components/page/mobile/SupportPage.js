@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import Box from "@mui/material/Box";
 
-import small_banner from "../../image/small_banner.jpg";
-import home from "../../image/home.png";
-import division from "../../image/division.png";
+import small_banner from "../../../image/small_banner.jpg";
+import home from "../../../image/home.png";
+import division from "../../../image/division.png";
 
-function SupportPage(props) {
+function MSupportPage(props) {
     useEffect(() => {
         return {}
     }, [])
@@ -16,9 +16,9 @@ function SupportPage(props) {
                 <img style={{width: '100%'}} src={small_banner}  alt="small_banner"/>
             </Box>
 
-            <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between' }}>
+            <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between' }}>
                 <Box style={{ display: 'flex', width: '100%', borderBottom: '2px solid black'}}>
-                    <Box className={"main_header_text"}>봉사지원</Box>
+                    <Box className={"mobile_main_header_text"}>봉사지원</Box>
                     <Box className={"main_header_path_text"}>
                         <img src={home}  alt="home"/>
                         <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 봉사지원</Box>
@@ -26,7 +26,7 @@ function SupportPage(props) {
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between', margin: '20px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between', margin: '20px 0px 0px 0px' }}>
                 <Box style={{ width: '100%'}}>
                     <Box style={{ display: 'flex', flexDirection: 'row'}}>
                         <img style={{width: '21px'}} src={division}  alt="division"/>
@@ -53,7 +53,10 @@ function SupportPage(props) {
                     </Box>
                     <Box className={"volunteer_page_main_row2"}>
                         <Box>
-                            • 온라인 입금 : 은행계좌안내 (농협은행 351-1251-7793-13 예금주:시산리아리랑공동체)
+                            • 온라인 입금 : 은행계좌안내
+                        </Box>
+                        <Box style={{ padding: '0px 0px 0px 10px'}}>
+                            (농협은행 351-1251-7793-13 예금주:시산리아리랑공동체)
                         </Box>
                     </Box>
                 </Box>
@@ -62,4 +65,4 @@ function SupportPage(props) {
     );
 }
 
-export default SupportPage;
+export default MSupportPage;

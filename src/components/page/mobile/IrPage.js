@@ -6,10 +6,10 @@ import axios from "axios";
 import Pagination from "react-js-pagination";
 import {Link} from "react-router-dom";
 
-import small_banner from "../../image/small_banner.jpg";
-import home from "../../image/home.png";
+import small_banner from "../../../image/small_banner.jpg";
+import home from "../../../image/home.png";
 
-function IrPage(props) {
+function MIrPage(props) {
     const [token, setToken] = useState(true);
     const [irList, setIrList] = useState([]);
     const [count, setCount] = useState(0);
@@ -62,9 +62,9 @@ function IrPage(props) {
                 <img style={{width: '100%'}} src={small_banner}  alt="small_banner"/>
             </Box>
 
-            <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between' }}>
+            <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between' }}>
                 <Box style={{ display: 'flex', width: '100%', borderBottom: '2px solid black'}}>
-                    <Box className={"main_header_text"}>재정공개</Box>
+                    <Box className={"mobile_main_header_text"}>재정공개</Box>
                     <Box className={"main_header_path_text"}>
                         <img src={home}  alt="home"/>
                         <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 재정공개</Box>
@@ -72,7 +72,7 @@ function IrPage(props) {
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between', margin: '20px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between', margin: '20px 0px 0px 0px' }}>
                 <Box style={{ width: '100%'}}>
                     <Box style={{ display: 'flex', flexDirection: 'row'}}>
                         <Box className={"ir_page_main_row1"}>전체</Box>
@@ -85,9 +85,9 @@ function IrPage(props) {
                             <Table style={{width: '100%'}}>
                                 <TableHead style={{ background: '#FFE9B7' }}>
                                     <TableRow>
-                                        <TableCell align="center" style={{ width: '10%', fontSize: '14px', fontWeight: 600, padding: '5px' }}>번호</TableCell>
-                                        <TableCell align="center" style={{ width: '75%', fontSize: '14px', fontWeight: 600, padding: '5px' }}>제목</TableCell>
-                                        <TableCell align="center" style={{ width: '15%', fontSize: '14px', fontWeight: 600, padding: '5px' }}>등록일</TableCell>
+                                        <TableCell align="center" style={{ width: '15%', fontSize: '14px', fontWeight: 600, padding: '5px' }}>번호</TableCell>
+                                        <TableCell align="center" style={{ width: '60%', fontSize: '14px', fontWeight: 600, padding: '5px' }}>제목</TableCell>
+                                        <TableCell align="center" style={{ width: '25%', fontSize: '14px', fontWeight: 600, padding: '5px' }}>등록일</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody id={"ir_search_table_body"}>
@@ -100,11 +100,11 @@ function IrPage(props) {
                                                       onMouseOut={ (e) => { onMouseOutRow(index) }}>
                                                     <TableCell id={"ir_search_table_row_no_" + index} align="center" style={{ padding: '10px 0px 10px 0px' }}>{ir.no}</TableCell>
                                                     <TableCell id={"ir_search_table_row_title_" + index} style={{ display: 'flex', padding: '10px 0px 10px 0px', cursor: 'point' }}>
-                                                        <Link to={"/IrDetailPage?no=" + ir.no} className={"main_link_row"}>
+                                                        <Link to={"/MIrDetailPage?no=" + ir.no} className={"main_link_row"}>
                                                             {ir.title}
                                                         </Link>
                                                     </TableCell>
-                                                    <TableCell id={"ir_search_table_row_createdAt_" + index} align="center" style={{ padding: '10px 0px 10px 0px' }}>{moment(new Date(ir.createdAt)).format("YYYY-MM-DD HH:mm:ss")}</TableCell>
+                                                    <TableCell id={"ir_search_table_row_createdAt_" + index} align="center" style={{ padding: '10px 0px 10px 0px' }}>{moment(new Date(ir.createdAt)).format("YYYY-MM-DD")}</TableCell>
                                                 </TableRow>
                                             )
                                         })
@@ -127,4 +127,4 @@ function IrPage(props) {
     );
 }
 
-export default IrPage;
+export default MIrPage;

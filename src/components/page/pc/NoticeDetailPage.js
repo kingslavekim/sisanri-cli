@@ -3,18 +3,18 @@ import Box from "@mui/material/Box";
 import moment from "moment";
 import axios from "axios";
 
-import small_banner from "../../image/small_banner.jpg";
-import home from "../../image/home.png";
+import small_banner from "../../../image/small_banner.jpg";
+import home from "../../../image/home.png";
 
-function IrDetailPage(props) {
-    const [irObject, setIrObject] = useState({});
+function NoticeDetailPage(props) {
+    const [noticeObject, setNoticeObject] = useState({});
 
     useEffect(() => {
         let query = window.location.href;
         let no = query.split('?')[1].split('=')[1]
 
-        axios.get('/api/getIrObject?no=' + no, {}).then(value => {
-            setIrObject(value.data.data);
+        axios.get('/api/getNoticeObject?no=' + no, {}).then(value => {
+            setNoticeObject(value.data.data);
         }).catch(reason => {
             alert(reason);
         }).finally(() => {
@@ -23,8 +23,8 @@ function IrDetailPage(props) {
         return {}
     }, [])
 
-    const irData: any = {};
-    irData.irObject = irObject;
+    const noticeData: any = {};
+    noticeData.noticeObject = noticeObject;
 
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -45,12 +45,12 @@ function IrDetailPage(props) {
             <Box style={{ display: 'flex', width: '75%', justifyContent: 'center', margin: '20px 0px 0px 0px' }}>
                 <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
                     <Box style={{ display: 'flex', flexDirection: 'column', width: '100%', background: '#D9D9D9', borderTop: '1px solid black', borderBottom: '1px solid black'}}>
-                        <Box className={"ir_detail_page_main_row1"}>{irData.irObject.title}</Box>
-                        <Box className={"ir_detail_page_main_row2"}>작성일 : {moment(new Date(irData.irObject.createdAt)).format("YYYY-MM-DD")}</Box>
+                        <Box className={"notice_detail_page_main_row1"}>{noticeData.noticeObject.title}</Box>
+                        <Box className={"notice_detail_page_main_row2"}>작성일 : {moment(new Date(noticeData.noticeObject.createdAt)).format("YYYY-MM-DD")}</Box>
                     </Box>
 
                     <Box style={{ display: 'flex', width: '90%', borderBottom: '1px solid black', wordBreak: 'break-all' }}>
-                        <Box className="ck-content" dangerouslySetInnerHTML={{__html: irData.irObject.content}}/>
+                        <Box className="ck-content" dangerouslySetInnerHTML={{__html: noticeData.noticeObject.content}}/>
                     </Box>
                 </Box>
             </Box>
@@ -58,4 +58,4 @@ function IrDetailPage(props) {
     );
 }
 
-export default IrDetailPage;
+export default NoticeDetailPage;

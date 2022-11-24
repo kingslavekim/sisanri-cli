@@ -2,12 +2,12 @@ import React, {useEffect} from 'react';
 import Box from "@mui/material/Box";
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 
-import small_banner from "../../image/small_banner.jpg";
-import home from "../../image/home.png";
-import division from "../../image/division.png";
-import volunteer_guide from "../../image/volunteer_guide.png";
+import small_banner from "../../../image/small_banner.jpg";
+import home from "../../../image/home.png";
+import division from "../../../image/division.png";
+import volunteer_guide from "../../../image/volunteer_guide.png";
 
-function VolunteerPage(props) {
+function MVolunteerPage(props) {
     useEffect(() => {
         return {}
     }, [])
@@ -18,9 +18,9 @@ function VolunteerPage(props) {
                 <img style={{width: '100%'}} src={small_banner}  alt="small_banner"/>
             </Box>
 
-            <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between' }}>
+            <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between' }}>
                 <Box style={{ display: 'flex', width: '100%', borderBottom: '2px solid black'}}>
-                    <Box className={"main_header_text"}>봉사지원</Box>
+                    <Box className={"mobile_main_header_text"}>봉사지원</Box>
                     <Box className={"main_header_path_text"}>
                         <img src={home}  alt="home"/>
                         <Box style={{fontSize: '14px', margin: '0px 0px 3px 10px'}}>Home > 봉사지원</Box>
@@ -28,7 +28,7 @@ function VolunteerPage(props) {
                 </Box>
             </Box>
 
-            <Box style={{ display: 'flex', width: '75%', justifyContent: 'space-between', margin: '20px 0px 0px 0px' }}>
+            <Box style={{ display: 'flex', width: '90%', justifyContent: 'space-between', margin: '20px 0px 0px 0px' }}>
                 <Box style={{ width: '100%'}}>
                     <Box style={{ display: 'flex', flexDirection: 'row'}}>
                         <img style={{width: '21px'}} src={division}  alt="division"/>
@@ -36,7 +36,7 @@ function VolunteerPage(props) {
                     </Box>
                     <Box className={"volunteer_page_main_row2"}>
                         <Box>
-                            <img style={{ padding: '10px 0px 10px 0px' }} src={volunteer_guide}  alt="volunteer_guide"/>
+                            <img style={{ padding: '10px 0px 10px 0px', width: '340px' }} src={volunteer_guide}  alt="volunteer_guide"/>
                         </Box>
                     </Box>
 
@@ -55,7 +55,7 @@ function VolunteerPage(props) {
                         <Box className={"volunteer_page_main_row1"}>봉사지원 종류</Box>
                     </Box>
                     <Box className={"volunteer_page_main_row2"}>
-                        <Box style={{width: '600px'}}>
+                        <Box style={{width: '340px'}}>
                             <TableContainer style={{display: 'flex', justifyContent: 'center', padding: '10px 0px 15px 0px'}}>
                                 <Table>
                                     <TableHead style={{background: 'white'}}>
@@ -122,4 +122,4 @@ function VolunteerPage(props) {
     );
 }
 
-export default VolunteerPage;
+export default MVolunteerPage;

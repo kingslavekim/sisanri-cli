@@ -8,10 +8,10 @@ import axios from "axios";
 import UsageSelectBox from "../selectBox/UsageSelectBox";
 import CategorySelectBox from "../selectBox/CategorySelectBox";
 import Button from "@mui/material/Button";
-import PostSearchModal from "../modal/PostSearchModal";
+import PostSearchModal from "../../modal/PostSearchModal";
 import { useRef } from "react";
 import Pagination from "react-js-pagination";
-import '../../css/Paging.css'
+import '../../../css/Paging.css'
 import BlindSelectBox from "../selectBox/BlindSelectBox";
 import ReplyCategorySelectBox from "../selectBox/ReplyCategorySelectBox";
 
