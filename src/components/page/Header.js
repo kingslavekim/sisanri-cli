@@ -23,8 +23,8 @@ function Header() {
     return (
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onMouseOut={(e)=>{closeMenu()}}>
             <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', padding: '30px 0px 30px 0px' }}>
-                <Box style={{ display: 'flex', cursor: 'pointer' }} onClick={(e)=>{goUrl('/')}}>
-                    <img style={{height: '80px'}} src={logo}  alt="logo"/>
+                <Box style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={(e)=>{goUrl('/')}}>
+                    <img style={{height: '60px'}} src={logo}  alt="logo"/>
                     <img style={{height: '80px'}} src={font_logo}  alt="font_logo"/>
                 </Box>
             </Box>
